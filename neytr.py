@@ -15,7 +15,7 @@ from tensorflow.keras.layers import (
 )
 
 
-# Загружаем датасет
+т
 
 data = pd.read_csv("dataset.csv")
 
@@ -23,7 +23,7 @@ data = pd.read_csv("dataset.csv")
 texts = data["text"]
 
 
-# жанр
+
 
 genre_encoder = LabelEncoder()
 
@@ -32,7 +32,7 @@ genres = genre_encoder.fit_transform(
 )
 
 
-# параметры
+
 
 difficulty_encoder = LabelEncoder()
 
@@ -47,7 +47,7 @@ coins = data["coins"].astype(int)
 
 
 
-# перевод текста в числа
+
 
 tokenizer = Tokenizer(
     num_words=5000
@@ -65,7 +65,7 @@ X = pad_sequences(
 
 
 
-# модель
+
 
 input_layer = Input(
     shape=(40,)
@@ -81,7 +81,7 @@ x = Embedding(
 x = LSTM(64)(x)
 
 
-# несколько выходов
+
 
 genre_output = Dense(
     3,
